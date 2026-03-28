@@ -1,6 +1,10 @@
 streamlit
 pandas
+numpy
 requests
 seaborn
 matplotlib
 folium
+joblib
+scikit-learn
+plotly
