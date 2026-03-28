@@ -330,7 +330,8 @@ if st.sidebar.button("Fetch Live Pollution"):
 @st.cache_data
 def load_data():
     return pd.read_csv(
-        r"C:\Users\mothe\OneDrive\Documents\Batch-6\enviroscan_week3_labeled_dataset.csv"
+        #r"C:\Users\mothe\OneDrive\Documents\Batch-6\enviroscan_week3_labeled_dataset.csv"
+        "enviroscan_week3_labeled_dataset.csv"
     )
 
 df = load_data()
