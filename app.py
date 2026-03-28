@@ -281,7 +281,8 @@ def parse_pollution_data(data):
 @st.cache_resource
 def load_model():
     return joblib.load(
-        r"C:\Users\mothe\OneDrive\Documents\Batch-6\pollution_source_model.pkl"
+        # r"C:\Users\mothe\OneDrive\Documents\Batch-6\pollution_source_model.pkl"
+        "pollution_source_model.pkl"
     )
 
 model = load_model()
