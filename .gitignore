@@ -1,0 +1,26 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary or evaluation files
+eval_results.txt
+eval_utf8.txt
+evaluate_model.py
+
+# Models & Data (often excluded, uncomment if the dataset is too big)
+# pollution_source_model.pkl
+# *.csv
+
+# Streamlit/Jupyter
+.stlit/
+.ipynb_checkpoints/
