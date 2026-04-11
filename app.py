@@ -1,17 +1,17 @@
 import streamlit as st
 import datetime
 
+# =======================
+# APP CONFIGURATION
+# =======================
+st.set_page_config(page_title="EnviroScan Dashboard", layout="wide")
+
 # Local module imports
 from src.config import logging
 from src.api import fetch_live_air_quality, parse_pollution_data
 from src.ml_model import load_model, live_to_model_input, predict_source
 from src.data_processing import load_data, apply_filters, evaluate_alerts
 from src.components import render_alert_banner, render_metrics, render_charts, render_map
-
-# =======================
-# APP CONFIGURATION
-# =======================
-st.set_page_config(page_title="EnviroScan Dashboard", layout="wide")
 st.title("🌍 EnviroScan – AI Pollution Monitoring Dashboard")
 
 def main():
