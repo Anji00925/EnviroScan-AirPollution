@@ -14,13 +14,14 @@ logging.basicConfig(
 load_dotenv()
 
 # Configuration Settings
-# For Streamlit Cloud, st.secrets natively reads the server console settings
-try:
-    OPENWEATHER_API_KEY = st.secrets.get("OPENWEATHER_API_KEY")
-    if not OPENWEATHER_API_KEY:
-        OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
-except Exception:
-    OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
+# First try local `.env` via os.getenv. If empty, safely try Streamlit cloud secrets.
+OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
+
+if not OPENWEATHER_API_KEY:
+    try:
+        OPENWEATHER_API_KEY = st.secrets.get("OPENWEATHER_API_KEY")
+    except Exception:
+        pass
 
 if not OPENWEATHER_API_KEY:
     logging.warning("OPENWEATHER_API_KEY is not set in the environment variables.")
